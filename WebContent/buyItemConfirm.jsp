@@ -64,11 +64,10 @@
     </div>
     <div id="main">
         <div id="top">
-            <p>BuyItemConfirm画面</p>
+            <p>BuyItem</p>
         </div>
         <div>
             <s:form>
-                <table>
                     <tr>
                         <td>商品名</td>
                         <td><s:property value="session.buyItem_name" /></td>
@@ -89,7 +88,6 @@
                         <td><input type="button" value="戻る" onclick="submitAction('HomeAction')" /></td>
                         <td><input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')" /></td>
                     </tr>
-                </table>
             </s:form>
         </div>
         <div>

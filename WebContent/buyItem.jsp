@@ -83,11 +83,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <span>在庫</span>
+                            <span>購入個数</span>
                         </td>
                         <td>
                             <!-- 右側に在庫を表示 -->
-                            <select name="stock">
+                            <select name="count">
                                 <option value="1" selected="selected">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

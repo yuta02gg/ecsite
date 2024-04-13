@@ -1,36 +1,30 @@
 package com.diworksdev.ecsite.action;
 
-import java.util.Map;
-
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.util.Map;
 
 public class BuyItemAction extends ActionSupport implements SessionAware {
     public Map<String, Object> session;
     private int count;
     private String pay;
 
-    @Override
     public String execute() {
-        // セッションに購入商品の数量と支払い方法を保存する
-        session.put("count", count);
-
-        // 合計金額を計算してセッションに保存する
-        int intCount = count;
+    	String result = SUCCESS; session.put("count", count);
+        int intCount = Integer.parseInt(session.get("count").toString());
         int intPrice = Integer.parseInt(session.get("buyItem_price").toString());
         session.put("total_price", intCount * intPrice);
 
         // 支払い方法に応じてセッションに保存する
         String payment;
         if (pay.equals("1")) {
-            payment = "現金払い";
+            payment = "現金払い"; session.put("pay",payment);
         } else {
-            payment = "クレジットカード";
+            payment = "クレジットカード"; session.put("pay",payment);
         }
-        session.put("payment_method", payment);
 
-        return SUCCESS;
+        return result;
     }
 
     // 購入商品の数量を設定するメソッド
